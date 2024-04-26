@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Chunked Image Tester</title>
+        <link rel="icon" type="image/png" href="images/favicon.png" />
+        <script src="scripts/request-image.js"></script>
+    </head>
+    <body>
+        <div name="imagesDiv">
+            <span>Image to download: </span>
+            <input
+                type="radio"
+                id="good-image"
+                name="image"
+                value="images/good-image.png"
+                checked
+            />
+            <label for="good-image">Good</label>
+            <input
+                type="radio"
+                id="bad-image"
+                name="image"
+                value="images/bad-image.png"
+                checked
+            />
+            <label for="serial_chunks">Bad</label>
+        <div>
+            <span>Download type:</span>
+            <input
+                type="radio"
+                id="serial_chunks"
+                name="download_type"
+                value="serial_chunks"
+                checked
+            />
+            <label for="serial_chunks">Serial chunks</label>
+            <input
+                type="radio"
+                id="parallel_chunks"
+                name="download_type"
+                value="parallel_chunks"
+            />
+            <label for="parallel_chunks">Parallel chunks</label>
+            <input
+                type="radio"
+                id="full"
+                name="download_type"
+                value="full"
+            />
+            <label for="full">Full</label>
+        </div>
+        <div>
+            <label for="max_chunk_size">Max chunk size in MB</label>
+            <input
+                type="number"
+                name="max_chunk_size"
+                value="10"
+                min="1"
+                max="50"
+            />
+        </div>
+        <div>
+            <button
+                onclick="requestImage(
+                  document.querySelector('input[name=image]:checked').value,
+                  document.querySelector('input[name=download_type]:checked').value,
+                  document.querySelector('input[name=max_chunk_size]').value)"
+            >
+                Load image
+            </button>
+        </div>
+    </body>
+</html>

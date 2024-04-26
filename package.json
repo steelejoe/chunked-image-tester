@@ -1,0 +1,14 @@
+{
+  "name": "chunked-image-tester",
+  "version": "0.1.1",
+  "author": "Joe Steele",
+  "private": true,
+  "scripts": {
+    "start": "node ./routes/server.js",
+    "debug": "node --inspect ./routes/server.js"
+  },
+  "dependencies": {
+    "debug": "~2.6.9",
+    "express": "~4.16.1"
+  }
+}
